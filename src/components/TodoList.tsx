@@ -1,14 +1,9 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux';
-import { Task, getTask } from '../redux/tasksSlice';
+import { Task } from '../redux/tasksSlice';
 import TodoItem from './TodoItem';
-import { useDispatch } from 'react-redux';
 
 const TodoList = () => {
-  // const dispatch = useDispatch();
-  // dispatch(getTask());
-
   const todos = useSelector((state: RootState) => {
     return state.tasks;
   });
