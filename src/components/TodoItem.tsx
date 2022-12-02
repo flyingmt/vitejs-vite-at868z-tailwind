@@ -2,13 +2,15 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteTask, Task } from '../redux/tasksSlice';
 
-const TodoItem = ({ id, name }: Task) => {
+const TodoItem = ({ userId, id, title, completed }: Task) => {
   const dispatch = useDispatch();
 
   const removeTask = () => {
     const removeItem: Task = {
-      id: id,
-      name: name,
+      userId,
+      id,
+      title,
+      completed,
     };
     dispatch(deleteTask(removeItem));
   };
@@ -35,7 +37,7 @@ const TodoItem = ({ id, name }: Task) => {
             />
           </svg>
         </div>
-        <div className="text-slate-500">{name}</div>
+        <div className="text-slate-500">{title}</div>
       </div>
       <div
         onClick={() => {

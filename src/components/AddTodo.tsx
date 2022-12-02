@@ -17,8 +17,10 @@ const AddTodo = () => {
     }
 
     const newTask: Task = {
+      userId: 0,
       id: 0,
-      name: value,
+      title: value,
+      completed: false,
     };
 
     dispatch(addTask(newTask));
